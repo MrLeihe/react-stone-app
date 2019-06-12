@@ -6,7 +6,9 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <header>首页</header>
+        <header>
+          <h1>首页</h1>
+        </header>
         <WrapperStoneForm />
       </div>
     );
