@@ -8,6 +8,7 @@ class Login extends React.Component {
         <header>
           <h1>登录</h1>
           <div>welcome to login</div>
+          <button>login</button>
         </header>
       </div>
     );

@@ -10,7 +10,9 @@ class Home extends React.Component {
           <h1>首页</h1>
         </header>
         <WrapperStoneForm />
-        <main />
+        <main>
+          <div>首页content</div>
+        </main>
       </div>
     );
   }
