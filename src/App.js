@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment'
 import './App.css';
 import 'antd/dist/antd.css';
 import { withRouter } from 'react-router-dom';
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    console.log(moment().format('YYYY-MM-DD'))
   }
 
   render() {
