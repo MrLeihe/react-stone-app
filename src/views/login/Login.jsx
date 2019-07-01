@@ -1,18 +1,9 @@
-import React from 'react';
-import 'antd/dist/antd.css';
+import createPage from '../template/common.jsx';
+import { InputNumber } from 'antd';
 
-class Login extends React.Component {
-  render() {
-    return (
-      <div>
-        <header>
-          <h1>登录</h1>
-          <div>welcome to login</div>
-          <button>login</button>
-        </header>
-      </div>
-    );
-  }
+function decorator(target) {
+  target.prototype.title = 'login';
+  target.prototype.otherView = InputNumber;
 }
 
-export default Login;
+export default createPage(decorator);
