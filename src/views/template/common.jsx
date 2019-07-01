@@ -19,6 +19,6 @@ function createPage(decorator) {
   }
   return Common;
 }
-console.log('我是stone')
+console.log('我是stone2')
 
 export default createPage;
