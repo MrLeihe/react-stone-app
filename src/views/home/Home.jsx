@@ -23,6 +23,7 @@ class Home extends React.Component {
         </main>
         <section>
           <span>stone</span>
+          <span>pony</span>
         </section>
         <section className='square-container'>
           <div className='top square'></div>
