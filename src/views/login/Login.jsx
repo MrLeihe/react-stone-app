@@ -7,10 +7,7 @@ function decorator(target) {
   target.prototype.scheme = 'https'
   target.prototype.host = 'pony'
 }
-<<<<<<< HEAD
 console.log('我是pony4')
-=======
 console.log('我是pony3')
->>>>>>> pony3
 
 export default createPage(decorator);
