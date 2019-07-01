@@ -4,7 +4,7 @@ import { InputNumber } from 'antd';
 function decorator(target) {
   target.prototype.title = 'login';
   target.prototype.otherView = InputNumber;
-  target.prototype.scheme = 'http'
+  target.prototype.scheme = 'https'
 }
 
 export default createPage(decorator);
