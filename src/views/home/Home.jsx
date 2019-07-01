@@ -13,6 +13,9 @@ class Home extends React.Component {
         <main>
           <div>首页content</div>
         </main>
+        <section>
+          <span>stone</span>
+        </section>
       </div>
     );
   }
