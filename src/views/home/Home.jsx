@@ -33,6 +33,7 @@ class Home extends React.Component {
           <span>background element</span>
           <div className='bg'></div>
         </section>
+        <h1>pony</h1>
       </div>
     );
   }
