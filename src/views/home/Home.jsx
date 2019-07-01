@@ -21,10 +21,6 @@ class Home extends React.Component {
         <main>
           <div>首页content</div>
         </main>
-        <section>
-          <span>stone</span>
-          <span>pony</span>
-        </section>
         <section className='square-container'>
           <div className='top square'></div>
           <div className='bottom square'></div>
