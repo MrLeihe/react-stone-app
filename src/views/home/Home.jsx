@@ -11,9 +11,6 @@ class Home extends React.Component {
   }
 
   sendRequest() {
-    console.log('success')
-    console.log('failure')
-    console.log('success')
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('success')
@@ -22,14 +19,12 @@ class Home extends React.Component {
   }
 
   testAsync() {
-    console.log('testAsync')
     return new Promise((resolve, reject) => {
       reject('fail')
     })
   }
 
   async test() {
-    console.log('test')
     try {
       const result = await this.testAsync()
     } catch (err) {
@@ -38,11 +33,12 @@ class Home extends React.Component {
   }
 
   gen = function* () {
-    console.log('gen---->', this)
+    // generarot函数
     const res1 = yield this.sendRequest()
     console.log(res1)
   }
 
+  // generaror执行函数
   spawn(genF) {
     return new Promise(function (resolve, reject) {
       var gen = genF();
