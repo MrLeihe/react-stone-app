@@ -13,6 +13,7 @@ class Home extends React.Component {
   sendRequest() {
     console.log('success')
     console.log('failure')
+    console.log('success')
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('success')
