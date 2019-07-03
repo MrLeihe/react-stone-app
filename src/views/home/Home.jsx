@@ -34,6 +34,8 @@ class Home extends React.Component {
 
   gen = function* () {
     // generarot函数
+    // *相当于async， yeild 相当于 await
+    console.log('gen---->', this)
     const res1 = yield this.sendRequest()
     console.log(res1)
   }
