@@ -7,6 +7,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     console.log('componentDidMount')
+    // this is html5
     this.spawn(this.gen.bind(this))
     this.test()
   }
