@@ -8,12 +8,12 @@ class Home extends React.Component {
   componentDidMount() {
     console.log('componentDidMount')
     // this is html5
+    console.log('Component')
     this.spawn(this.gen.bind(this))
     this.test()
   }
 
   sendRequest() {
-    console.log('sendRequest')
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('success')
@@ -22,6 +22,7 @@ class Home extends React.Component {
   }
 
   testAsync() {
+    console.log('testAsync')
     return new Promise((resolve, reject) => {
       reject('fail')
     })
