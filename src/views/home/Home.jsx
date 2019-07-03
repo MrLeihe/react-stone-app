@@ -22,7 +22,7 @@ class Home extends React.Component {
   }
 
   testAsync() {
-    console.log('testAsync')
+    console.log('promise')
     return new Promise((resolve, reject) => {
       reject('fail')
     })
