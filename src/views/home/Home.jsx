@@ -12,6 +12,7 @@ class Home extends React.Component {
 
   sendRequest() {
     console.log('success')
+    console.log('failure')
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('success')
@@ -27,6 +28,7 @@ class Home extends React.Component {
   }
 
   async test() {
+    console.log('test')
     try {
       const result = await this.testAsync()
     } catch (err) {
