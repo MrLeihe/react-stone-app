@@ -6,7 +6,6 @@ import './home.css'
 class Home extends React.Component {
 
   componentDidMount() {
-    console.log('componentDidMount')
     this.spawn(this.gen.bind(this))
     this.test()
   }
