@@ -25,7 +25,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(moment().format('YYYY-MM-DD'))
   }
 
   render() {

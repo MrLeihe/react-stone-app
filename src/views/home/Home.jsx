@@ -1,23 +1,76 @@
 import React from 'react';
-import WrapperStoneForm from '../../components/stoneForm';
 import 'antd/dist/antd.css';
 import './home.css'
-import defaultItem from '../../utils/module'
-import { default as defaultItem2 } from '../../utils/module'
-import _, { default as defaultItem3 } from '../../utils/module'
 
-console.log(defaultItem, defaultItem2)
-console.log(defaultItem === defaultItem2)
-console.log(_)
 
 class Home extends React.Component {
+
+  componentDidMount() {
+    console.log('componentDidMount')
+    this.spawn(this.gen.bind(this))
+    this.test()
+  }
+
+  sendRequest() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('success')
+      }, 1000);
+    })
+  }
+
+  testAsync() {
+    return new Promise((resolve, reject) => {
+      reject('fail')
+    })
+  }
+
+  async test() {
+    try {
+      const result = await this.testAsync()
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  gen = function* () {
+    console.log('gen---->', this)
+    const res1 = yield this.sendRequest()
+    console.log(res1)
+  }
+
+  spawn(genF) {
+    return new Promise(function (resolve, reject) {
+      var gen = genF();
+      function step(nextF) {
+        try {
+          var next = nextF();
+        } catch (e) {
+          return reject(e);
+        }
+        if (next.done) {
+          return resolve(next.value);
+        }
+        Promise.resolve(next.value).then(function (v) {
+          step(function () { return gen.next(v); });
+        }, function (e) {
+          step(function () { return gen.throw(e); });
+        });
+      }
+      step(function () { return gen.next(undefined); });
+    });
+  }
+
+  timeOut() {
+    return 'stone'
+  }
+
   render() {
     return (
       <div>
         <header>
           <h1>首页</h1>
         </header>
-        <WrapperStoneForm />
         <main>
           <div>首页content</div>
         </main>
@@ -27,7 +80,7 @@ class Home extends React.Component {
         </section>
         <section>
           <span>image element</span>
-          <img src='https://tutorialzine.com/media/2016/08/bicycle.jpg'></img>
+          <img src='https://tutorialzine.com/media/2016/08/bicycle.jpg' alt='自行车'></img>
         </section>
         <section>
           <span>background element</span>
