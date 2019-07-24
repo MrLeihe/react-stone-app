@@ -42,6 +42,7 @@
     "fs-extra": "0.30.0",
     "gulp": "^4.0.2",
     "gulp-babel": "7.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.3",
@@ -52,6 +53,7 @@
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^0.5.2",
+    "react-devtools": "^3.6.1",
     "source-map-explorer": "^1.8.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
@@ -63,7 +65,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "devtools": "react-devtools"
   },
   "jest": {
     "collectCoverageFrom": [

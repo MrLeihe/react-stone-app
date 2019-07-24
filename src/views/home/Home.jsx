@@ -1,9 +1,17 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './home.css'
-
+import HelloView from '../../components/hello'
+import Axios from 'axios';
 
 class Home extends React.Component {
+
+  constructor() {
+    super()
+    this.callRef = React.createRef()
+    console.log('callRef', this.callRef)
+    this.handleClick = this.handleClick.bind(this)
+  }
 
   componentDidMount() {
     this.spawn(this.gen.bind(this))
@@ -12,9 +20,11 @@ class Home extends React.Component {
 
   sendRequest() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('success')
-      }, 1000);
+      Axios.post('http://127.0.0.1:4000/').then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
     })
   }
 
@@ -68,6 +78,10 @@ class Home extends React.Component {
     return 'stone'
   }
 
+  handleClick() {
+    console.log(this.callRef.current)
+  }
+
   render() {
     return (
       <div>
@@ -91,6 +105,10 @@ class Home extends React.Component {
         </section>
         <h1>pony</h1>
         <span>stone</span>
+        <button onClick={this.handleClick}>ref</button>
+
+        <HelloView />
+
       </div>
     );
   }
